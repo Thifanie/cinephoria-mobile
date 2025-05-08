@@ -1,0 +1,27 @@
+.btn {
+  background-color: #d4cdc9;
+  color: #545163;
+}
+
+label {
+  color: #d4cdc9;
+}
+
+h3 {
+  text-align: center;
+  margin-top: 30px;
+}
+
+#div-places {
+  gap: 1em;
+  padding: 0;
+}
+
+#places {
+  background-color: #d4cdc9;
+  color: #545163;
+}
+
+#window {
+  min-height: 100vh;
+}

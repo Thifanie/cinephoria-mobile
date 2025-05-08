@@ -1,0 +1,16 @@
+<div class="cinema">
+  <h3>Sélectionnez votre siège</h3>
+  <div class="seats-container"></div>
+  <div *ngIf="selectedSeats.length > 0" class="d-flex justify-content-center">
+    <p>Sièges réservés :&nbsp;</p>
+    <p *ngFor="let seat of selectedSeats; let last = last">
+      {{ seat }}<span *ngIf="!last"> -&nbsp;</span>
+    </p>
+  </div>
+  <div *ngIf="selectedSeats.length === 0">
+    <p>Aucun siège réservé.</p>
+  </div>
+  <button type="button" class="btn" (click)="confirm()">
+    Confirmer la réservation
+  </button>
+</div>
