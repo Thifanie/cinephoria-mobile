@@ -13,10 +13,6 @@ p {
   color: #545163;
 }
 
-img {
-  width: 100%;
-}
-
 #description-cinema {
   background-color: #d4cdc9;
   border-radius: 10px;
@@ -24,7 +20,7 @@ img {
   width: 75%;
 }
 
-#carousel {
+swiper-container {
   display: flex;
   align-items: center;
   justify-content: center;

@@ -84,3 +84,7 @@ ion-tab-button:hover .tab-icon-active {
 ion-tab-button:hover .tab-icon {
   display: none; /* Cache l'icône inactive lorsqu'on survole l'onglet */
 }
+
+ion-header {
+  --background: #a57e8f;
+}

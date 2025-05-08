@@ -1,14 +1,24 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  Component,
+  CUSTOM_ELEMENTS_SCHEMA,
+  ElementRef,
+  OnInit,
+} from '@angular/core';
 import { DataService } from '../../data.service';
 import { Subscription } from 'rxjs';
 import { Film } from '../../features/films/models/film';
 import { RouterLink } from '@angular/router';
 import { NgFor } from '@angular/common';
+import { IonicModule } from '@ionic/angular';
+import { register } from 'swiper/element/bundle';
+
+register();
 
 @Component({
   selector: 'app-accueil',
   standalone: true,
-  imports: [NgFor, RouterLink],
+  imports: [NgFor, RouterLink, IonicModule],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
   templateUrl: './accueil.component.html',
   styleUrl: './accueil.component.css',
 })
