@@ -53,3 +53,34 @@ h3 {
   color: #d4cdc9;
   margin-bottom: 50px;
 }
+
+ion-tab-bar {
+  --background: #6d6576; /* Change la couleur de fond des onglest */
+  --color: #d4cdc9; /* Change la couleur du texte (label) des onglets */
+}
+
+ion-tab-button {
+  --color-selected: #a57e8f; /* Couleur de l'icône pour l'onglet "accueil" lorsqu'il est actif */
+}
+
+ion-tab-button img {
+  height: 30px;
+  width: 30px;
+  display: none;
+}
+
+ion-tab-button.tab-selected .tab-icon-active {
+  display: block; /* Affiche l'icône active lorsque l'onglet est sélectionné */
+}
+
+ion-tab-button:not(.tab-selected) .tab-icon {
+  display: block; /* Affiche l'icône inactive lorsque l'onglet n'est pas sélectionné */
+}
+
+ion-tab-button:hover .tab-icon-active {
+  display: block;
+}
+
+ion-tab-button:hover .tab-icon {
+  display: none; /* Cache l'icône inactive lorsqu'on survole l'onglet */
+}

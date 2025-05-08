@@ -14,25 +14,43 @@ export const routes: Routes = [
           ),
       },
       {
-        path: 'tab2',
+        path: 'compte',
         loadComponent: () =>
-          import('../tab2/tab2.page').then((m) => m.Tab2Page),
+          import('../pages/compte/compte.component').then(
+            (m) => m.CompteComponent
+          ),
       },
       {
-        path: 'tab3',
+        path: 'reservation',
         loadComponent: () =>
-          import('../tab3/tab3.page').then((m) => m.Tab3Page),
+          import('../pages/reservation/reservation.component').then(
+            (m) => m.ReservationComponent
+          ),
+      },
+      {
+        path: 'films',
+        loadComponent: () =>
+          import('../pages/films/films.component').then(
+            (m) => m.FilmsComponent
+          ),
+      },
+      {
+        path: 'connexion',
+        loadComponent: () =>
+          import('../pages/connexion/connexion.component').then(
+            (m) => m.ConnexionComponent
+          ),
       },
       {
         path: '',
-        redirectTo: '/tabs/tab2',
+        redirectTo: '/tabs/accueil',
         pathMatch: 'full',
       },
     ],
   },
   {
     path: '',
-    redirectTo: 'accueil',
+    redirectTo: 'tabs',
     pathMatch: 'full',
   },
 ];

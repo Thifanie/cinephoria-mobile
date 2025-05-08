@@ -3,14 +3,12 @@ import { DataService } from '../../data.service';
 import { Subscription } from 'rxjs';
 import { Film } from '../../features/films/models/film';
 import { RouterLink } from '@angular/router';
+import { NgFor } from '@angular/common';
 
 @Component({
   selector: 'app-accueil',
   standalone: true,
-  imports: [
-    // NgFor,
-    RouterLink,
-  ],
+  imports: [NgFor, RouterLink],
   templateUrl: './accueil.component.html',
   styleUrl: './accueil.component.css',
 })
