@@ -23,9 +23,7 @@
               "browser": ""
             },
             "index": "src/index.html",
-            "polyfills": [
-              "src/polyfills.ts"
-            ],
+            "polyfills": ["src/polyfills.ts"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
@@ -35,8 +33,15 @@
                 "output": "assets"
               }
             ],
-            "styles": ["src/global.scss", "src/theme/variables.scss"],
-            "scripts": [],
+            "styles": [
+              "./node_modules/bootstrap/scss/bootstrap.scss",
+              "./node_modules/bootstrap-icons/font/bootstrap-icons.css",
+              "src/global.scss",
+              "src/theme/variables.scss"
+            ],
+            "scripts": [
+              "./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ],
             "browser": "src/main.ts"
           },
           "configurations": {
