@@ -11,10 +11,11 @@ import { Router } from '@angular/router';
 import { DataService } from '../../../data.service';
 import { Subscription, catchError, first, of, throwError } from 'rxjs';
 import { AuthServiceService } from '../services/auth-service.service';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-connexion-form',
-  imports: [FormsModule, ReactiveFormsModule, NgIf],
+  imports: [FormsModule, ReactiveFormsModule, NgIf, IonicModule],
   templateUrl: './connexion-form.component.html',
   styleUrl: './connexion-form.component.css',
 })

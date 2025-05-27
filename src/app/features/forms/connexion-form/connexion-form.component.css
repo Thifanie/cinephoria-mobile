@@ -4,7 +4,7 @@ form {
   padding: 40px;
   margin: 0px auto 50px;
   color: #545163;
-  width: 30%;
+  width: 85%;
 }
 
 div {
@@ -16,6 +16,12 @@ div {
 a {
   color: #545163;
   text-align: center;
+}
+
+ion-input {
+  --background: #d4cdc9;
+  margin-bottom: 8px;
+  --border-radius: 5px;
 }
 
 input,
