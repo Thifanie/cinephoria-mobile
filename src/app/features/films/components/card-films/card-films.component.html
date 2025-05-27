@@ -1,72 +1,66 @@
-<div *ngFor="let film of items" [id]="film.title">
-  <div class="container">
-    <div class="card mb-3" style="width: 828px">
-      <div class="row g-0">
-        <div class="col-md-6">
-          <img
-            [src]="film.movieposter"
-            class="img-fluid rounded-start"
-            alt="{{ film.title }}"
-          />
-        </div>
-        <div class="card-body col-md-4 p-2">
-          <h4 class="card-title mb-4" id="title">{{ film.title }}</h4>
-          <h5 class="card-subtitle mb-4" id="actors">{{ film.actors }}</h5>
-          <p class="card-text" id="description">
-            {{ film.description }}
-          </p>
-          <h6 class="card-subtitle mb-2" id="types">
-            {{ film.type }}
-          </h6>
+<ion-card *ngFor="let film of items" [id]="film.title">
+  <img
+    [src]="film.movieposter"
+    class="img-fluid rounded-start"
+    alt="{{ film.title }}"
+  />
 
-          <h6 *ngIf="film.minage" class="card-subtitle mb-2" id="minAge">
-            Age minimum : {{ film.minage }} ans
-          </h6>
+  <ion-card-header>
+    <ion-card-title>{{ film.title }}</ion-card-title>
+    <ion-card-subtitle>{{ film.type }}</ion-card-subtitle>
+  </ion-card-header>
 
-          <h5
-            *ngIf="film.favorite"
-            class="card-subtitle mb-2"
-            style="color: #a57e8f; font-weight: bold; text-align: center"
-            id="favorite"
-          >
-            Coup de coeur
-          </h5>
+  <ion-card-content>
+    <p id="actors">
+      {{ film.actors }}
+    </p>
+    <p id="description">
+      {{ film.description }}
+    </p>
 
-          <!-- Etoiles représentant la note du film -->
+    <p *ngIf="film.minage" id="minAge">
+      <span style="text-decoration: underline">Age minimum</span> :
+      {{ film.minage }} ans
+    </p>
 
-          <div *ngIf="film.opinion" class="rating">
-            <div class="stars-outer">
-              <img src="assets/emptyStar.png" alt="empty star" />
-              <img src="assets/emptyStar.png" alt="empty star" />
-              <img src="assets/emptyStar.png" alt="empty star" />
-              <img src="assets/emptyStar.png" alt="empty star" />
-              <img src="assets/emptyStar.png" alt="empty star" />
-              <div
-                class="stars-inner"
-                [style.width.%]="calculateRating(film.opinion)"
-              >
-                <img src="assets/filledStar.png" alt="filled star" />
-                <img src="assets/filledStar.png" alt="filled star" />
-                <img src="assets/filledStar.png" alt="filled star" />
-                <img src="assets/filledStar.png" alt="filled star" />
-                <img src="assets/filledStar.png" alt="filled star" />
-              </div>
-            </div>
-          </div>
+    <p
+      *ngIf="film.favorite"
+      style="color: #a57e8f; font-weight: bold; text-align: end"
+      id="favorite"
+    >
+      Coup de coeur
+    </p>
 
-          <div *ngIf="!film.opinion" class="new"><p>Nouveau</p></div>
+    <!-- Etoiles représentant la note du film -->
 
-          <div class="d-flex justify-content-center">
-            <button
-              type="button"
-              (click)="goToFilmSessions(film.id)"
-              class="btn"
-            >
-              Voir les séances disponibles
-            </button>
-          </div>
+    <div *ngIf="film.opinion" class="rating">
+      <div class="stars-outer">
+        <img src="assets/emptyStar.png" alt="empty star" />
+        <img src="assets/emptyStar.png" alt="empty star" />
+        <img src="assets/emptyStar.png" alt="empty star" />
+        <img src="assets/emptyStar.png" alt="empty star" />
+        <img src="assets/emptyStar.png" alt="empty star" />
+        <div
+          class="stars-inner"
+          [style.width.%]="calculateRating(film.opinion)"
+        >
+          <img src="assets/filledStar.png" alt="filled star" />
+          <img src="assets/filledStar.png" alt="filled star" />
+          <img src="assets/filledStar.png" alt="filled star" />
+          <img src="assets/filledStar.png" alt="filled star" />
+          <img src="assets/filledStar.png" alt="filled star" />
         </div>
       </div>
     </div>
-  </div>
-</div>
+
+    <div *ngIf="!film.opinion" class="new" style="text-align: end">
+      <p>Nouveau</p>
+    </div>
+
+    <div class="d-flex justify-content-center">
+      <button type="button" (click)="goToFilmSessions(film.id)" class="btn">
+        Voir les séances disponibles
+      </button>
+    </div>
+  </ion-card-content>
+</ion-card>

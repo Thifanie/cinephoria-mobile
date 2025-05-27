@@ -2,12 +2,13 @@ import { Component, Input } from '@angular/core';
 import { Film } from '../../models/film';
 import { CommonModule, NgFor } from '@angular/common';
 import { Router } from '@angular/router';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-card-films',
   templateUrl: './card-films.component.html',
   styleUrl: './card-films.component.css',
-  imports: [CommonModule, NgFor],
+  imports: [CommonModule, NgFor, IonicModule],
 })
 export class CardFilmsComponent {
   @Input() items: Film[] = []; // Utilisation d'un tableau classique
