@@ -46,16 +46,19 @@ h1 {
   color: #d4cdc9;
   font-weight: bold;
   text-align: center;
-  margin: 50px 0 50px;
 }
 
 h3 {
   color: #d4cdc9;
-  margin-bottom: 50px;
+  margin-bottom: 16px;
+}
+
+p {
+  font-size: 10px;
 }
 
 ion-tab-bar {
-  --background: #6d6576; /* Change la couleur de fond des onglest */
+  --background: #6d6576; /* Change la couleur de fond des onglets */
   --color: #d4cdc9; /* Change la couleur du texte (label) des onglets */
 }
 
@@ -86,5 +89,22 @@ ion-tab-button:hover .tab-icon {
 }
 
 ion-header {
-  --background: #a57e8f;
+  --background: #6d6576;
+}
+
+ion-toolbar {
+  --background: #6d6576;
+}
+
+ion-title {
+  --color: #d4cdc9;
+}
+
+ion-content {
+  --background: #545163;
+}
+
+.headline {
+  font-size: 28px;
+  font-weight: bold;
 }

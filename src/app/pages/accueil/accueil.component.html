@@ -4,27 +4,8 @@
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <h1>Cinéphoria</h1>
-
-  <div class="container" id="description-cinema">
-    <p>
-      Cinéphoria est un joyau du cinéma français, une véritable icône du
-      divertissement cinématographique. Fondée il y a plusieurs décennies par
-      des passionnés de cinéma, l’entreprise a réussi à s’imposer comme un
-      acteur majeur de l’industrie du divertissement en France. L’entreprise
-      enregistre un chiffre d’affaires de 5 millions d’euros, témoignant de son
-      succès, avec 80 employées répartis dans 5 cinémas en France (Nantes,
-      Bordeaux, Paris, Toulouse, Lille) et 2 en Belgique (Charleroi, Liège). Un
-      audit a été effectué et a révélé que les clients préfèrent payer un peu
-      plus cher, mais, aller dans un cinéma responsable : Cinéphoria reverse 20
-      % de son chiffre d’affaires annuel pour soutenir des initiatives
-      écologiques. Ils souhaitent proposer à leurs clients une plateforme
-      moderne et performante afin d’améliorer leurs expériences.
-    </p>
-  </div>
-
-  <h3>Films récemment ajoutés</h3>
+<ion-content class="ion-padding">
+  <h3>Films à l'affiche</h3>
 
   <swiper-container
     [loop]="false"
@@ -32,7 +13,6 @@
     [pagination]="{ clickable: true }"
     [navigation]="true"
     class="film-carousel"
-    pager="true"
   >
     <swiper-slide *ngFor="let film of listFilms">
       <ion-card>
@@ -42,13 +22,10 @@
           style="width: 100%; height: auto"
         />
         <ion-card-header>
-          <ion-card-title>{{ film.title }}</ion-card-title>
-        </ion-card-header>
-        <ion-card-content>
           <ion-button [routerLink]="['/tabs/films']" [fragment]="film.title">
-            Voir plus
+            {{ film.title }}
           </ion-button>
-        </ion-card-content>
+        </ion-card-header>
       </ion-card>
     </swiper-slide>
   </swiper-container>

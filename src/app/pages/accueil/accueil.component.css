@@ -6,25 +6,44 @@ h3 {
   text-align: center;
 }
 
-p {
-  text-align: justify;
-  padding: 10px;
-  margin-bottom: 50px;
-  color: #545163;
-}
-
-#description-cinema {
-  background-color: #d4cdc9;
-  border-radius: 10px;
-  padding: 0;
-  width: 75%;
-}
-
 swiper-container {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 50%;
+}
+
+ion-card-header {
+  --background: #6d6576;
+}
+
+ion-button {
+  text-align: center;
+  font-size: 12px;
+  --background: #d4cdc9;
+  color: #545163;
+  opacity: 75%;
+  margin-bottom: 16px;
+}
+
+/* Couleur des bullets normales */
+.film-carousel::part(bullet) {
+  margin: 8px 4px;
+  background-color: #545163; /* couleur inactive */
+  opacity: 1;
+}
+
+/* Couleur du bullet actif */
+.film-carousel::part(bullet-active) {
+  margin: 8px;
+  background-color: #d4cdc9; /* couleur active */
+}
+
+.film-carousel::part(button-prev) {
+  color: #d4cdc9;
+}
+
+.film-carousel::part(button-next) {
+  color: #d4cdc9;
 }
 
 .carousel-control-prev {
