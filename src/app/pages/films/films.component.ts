@@ -3,10 +3,11 @@ import { ListFilmsComponent } from '../../features/films/components/list-films/l
 import { CommonModule } from '@angular/common';
 import { Subscription } from 'rxjs';
 import { ActivatedRoute } from '@angular/router';
+import { IonicModule } from '@ionic/angular';
 
 @Component({
   selector: 'app-films',
-  imports: [ListFilmsComponent, CommonModule],
+  imports: [ListFilmsComponent, CommonModule, IonicModule],
   templateUrl: './films.component.html',
   styleUrl: './films.component.css',
 })
