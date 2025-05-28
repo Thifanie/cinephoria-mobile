@@ -7,41 +7,23 @@ form {
   width: 85%;
 }
 
-div {
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
-
 a {
   color: #545163;
-  text-align: center;
 }
 
 ion-input {
   --background: #d4cdc9;
-  margin-bottom: 8px;
+  margin-bottom: 0.5rem;
+  margin-top: 0.5rem;
   --border-radius: 5px;
 }
 
-input,
-button {
-  width: 75%;
-  margin-bottom: 8px;
+ion-button {
+  margin-bottom: 1rem;
+  margin-top: 1rem;
 }
 
-.erreur {
-  font-size: small;
-  color: #b55d5f;
-}
-
-button {
-  margin-top: 16px;
-  background-color: #6d6576;
-  color: #d4cdc9;
-}
-
-button:hover {
-  background-color: #545163;
-  color: #d4cdc9;
+.pwd-forgotten {
+  display: block;
+  text-align: center;
 }

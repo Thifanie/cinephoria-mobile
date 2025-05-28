@@ -4,34 +4,37 @@
     <ion-label position="stacked">Adresse mail</ion-label>
     <ion-input formControlName="email" type="email" required></ion-input>
     <ion-text
-      color="danger"
+      color="custom-red"
       *ngIf="
         connexionForm.get('email')?.invalid &&
         connexionForm.get('email')?.touched
       "
-      ><p class="ion-padding-start">
-        L'adresse mail doit contenir le caractère &#64;.
-      </p>
+      ><p>L'adresse mail doit contenir le caractère &#64;.</p>
     </ion-text>
 
     <!-- Password -->
     <ion-label position="stacked">Mot de passe</ion-label>
-    <ion-input formControlName="password" type="password" required />
+    <ion-input formControlName="password" type="password" required>
+      <ion-input-password-toggle
+        slot="end"
+        color="custom-darkviolet"
+      ></ion-input-password-toggle>
+    </ion-input>
     <ion-text
-      color="danger"
+      color="custom-red"
       *ngIf="
         connexionForm.get('password')?.invalid &&
         connexionForm.get('password')?.touched
       "
-      ><p class="ion-padding-start">
-        Le mot de passe doit avoir au moins 8 caractères.
-      </p>
+      ><p>Le mot de passe doit avoir au moins 8 caractères.</p>
     </ion-text>
 
     <!-- Bouton + lien -->
-    <ion-button type="submit" expand="block">Se connecter</ion-button>
-    <ion-text class="ion-text-center">
-      <a href="">Mot de passe oublié</a></ion-text
+    <ion-button type="submit" expand="block" color="custom-darkviolet"
+      >Se connecter</ion-button
+    >
+    <ion-text class="pwd-forgotten"
+      ><a href="">Mot de passe oublié</a></ion-text
     >
   </form>
 </ion-content>

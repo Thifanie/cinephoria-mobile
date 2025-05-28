@@ -1,2 +1,36 @@
 // For information on how to create your own theme, please see:
 // http://ionicframework.com/docs/theming/
+@import "@ionic/angular/css/core.css";
+
+:root {
+  --ion-color-custom-darkviolet: #545163;
+  --ion-color-custom-darkviolet-rgb: 84, 81, 99;
+  --ion-color-custom-darkviolet-contrast: #d4cdc9;
+  --ion-color-custom-darkviolet-contrast-rgb: 212, 205, 201;
+  --ion-color-custom-darkviolet-shade: #4a4858;
+  --ion-color-custom-darkviolet-tint: #646175;
+  --ion-color-custom-red: #b55d5f;
+  --ion-color-custom-red-rgb: 181, 93, 95;
+  --ion-color-custom-red-contrast: #d4cdc9;
+  --ion-color-custom-red-contrast-rgb: 212, 205, 201;
+  --ion-color-custom-red-shade: #b55d5f94;
+  --ion-color-custom-red-tint: #cb8788;
+}
+
+.ion-color-custom-darkviolet {
+  --ion-color-base: var(--ion-color-custom-darkviolet);
+  --ion-color-base-rgb: var(--ion-color-custom-darkviolet-rgb);
+  --ion-color-contrast: var(--ion-color-custom-darkviolet-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-custom-darkviolet-contrast-rgb);
+  --ion-color-shade: var(--ion-color-custom-darkviolet-shade);
+  --ion-color-tint: var(--ion-color-custom-darkviolet-tint);
+}
+
+.ion-color-custom-red {
+  --ion-color-base: var(--ion-color-custom-red);
+  --ion-color-base-rgb: var(--ion-color-custom-red-rgb);
+  --ion-color-contrast: var(--ion-color-custom-red-contrast);
+  --ion-color-contrast-rgb: var(--ion-color-custom-red-contrast-rgb);
+  --ion-color-shade: var(--ion-color-custom-red-shade);
+  --ion-color-tint: var(--ion-color-custom-red-tint);
+}
