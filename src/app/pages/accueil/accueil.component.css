@@ -28,17 +28,24 @@ ion-button {
 
 /* Couleur des bullets normales */
 .film-carousel::part(bullet) {
-  margin: 8px 4px;
+  /* margin: 8px 4px; */
   background-color: #545163; /* couleur inactive */
   opacity: 1;
-  transform: translateY(-8px);
+  /* transform: translateY(-8px); */
 }
 
 /* Couleur du bullet actif */
 .film-carousel::part(bullet-active) {
-  margin: 8px;
+  /* margin: 8px; */
   background-color: #d4cdc9; /* couleur active */
-  transform: translateY(-8px);
+  /* transform: translateY(-8px); */
+}
+
+.film-carousel::part(pagination) {
+  display: flex;
+  /* align-items: center; */
+  justify-content: center;
+  transform: translateY(-100%);
 }
 
 .film-carousel::part(button-prev) {
