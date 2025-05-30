@@ -12,6 +12,11 @@ h3 {
   margin-top: 30px;
 }
 
+p {
+  margin-bottom: 0;
+  font-size: 1rem;
+}
+
 #div-places {
   gap: 1em;
   padding: 0;
@@ -24,4 +29,30 @@ h3 {
 
 #window {
   min-height: 100vh;
+}
+
+ion-select {
+  font-size: 1rem;
+  --placeholder-color: #d4cdc9;
+  --placeholder-opacity: 1;
+}
+
+ion-item,
+ion-list {
+  --background: transparent;
+  background-color: transparent;
+}
+
+ion-item {
+  color: #d4cdc9;
+  --opacity: 1;
+}
+
+ion-select-popover.custom-popover {
+  --background: aqua !important;
+  background-color: aqua !important;
+}
+
+.places {
+  text-align: center;
 }

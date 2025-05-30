@@ -11,10 +11,19 @@ import { Room } from '../../features/films/models/room';
 import { Quality } from '../../features/films/models/quality';
 import { CinemaNamePipe } from '../../pipes/cinema-name.pipe';
 import { AuthServiceService } from '../../features/forms/services/auth-service.service';
+import { IonicModule } from '@ionic/angular';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-reservation',
-  imports: [NgFor, NgIf, CardSessionsComponent, CinemaNamePipe],
+  imports: [
+    NgFor,
+    NgIf,
+    CardSessionsComponent,
+    CinemaNamePipe,
+    IonicModule,
+    FormsModule,
+  ],
   templateUrl: './reservation.component.html',
   styleUrl: './reservation.component.css',
 })
@@ -30,6 +39,8 @@ export class ReservationComponent implements OnInit, OnDestroy {
   listRooms: Room[] = [];
   listQualities: Quality[] = [];
   idQuality!: number | undefined;
+  numberOfSeats: number = 1;
+  customPopoverOptions = { alignment: 'start', cssClass: 'custom-popover' };
 
   constructor(
     private readonly dataService: DataService,
@@ -82,6 +93,14 @@ export class ReservationComponent implements OnInit, OnDestroy {
           this.listSessions = sessions;
         })
     );
+  }
+
+  increase() {
+    if (this.numberOfSeats < 114) this.numberOfSeats++;
+  }
+
+  decrease() {
+    if (this.numberOfSeats > 1) this.numberOfSeats--;
   }
 
   ngOnDestroy() {

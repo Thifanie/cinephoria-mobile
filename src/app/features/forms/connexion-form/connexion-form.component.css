@@ -16,6 +16,7 @@ ion-input {
   margin-bottom: 0.5rem;
   margin-top: 0.5rem;
   --border-radius: 5px;
+  height: 3rem;
 }
 
 ion-button {

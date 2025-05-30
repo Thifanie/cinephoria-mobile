@@ -1,58 +1,54 @@
-<div id="window">
+<ion-content class="ion-padding">
   <h1>Réservation</h1>
 
   <!-- Menus déroulant et input nombre-->
-  <div class="container">
-    <div class="row align-items-center justify-content-center">
-      <div class="col pb-3">
-        <!-- Choix du cinéma -->
-        <div class="dropdown">
-          <button
-            class="btn dropdown-toggle"
-            type="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Choisissez un cinéma
-          </button>
-          <ul class="dropdown-menu">
-            <li *ngFor="let cinema of listCinemas">
-              <a class="dropdown-item" (click)="selectCinema(cinema)">{{
-                cinema.name
-              }}</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <!-- Choix du film -->
-      <div class="col pb-3">
-        <div class="dropdown">
-          <button
-            class="btn dropdown-toggle"
-            type="button"
-            data-bs-toggle="dropdown"
-            aria-expanded="false"
-          >
-            Choisissez un film
-          </button>
-          <ul class="dropdown-menu">
-            <li *ngFor="let film of listFilms">
-              <a class="dropdown-item" (click)="selectFilm(film)">{{
-                film.title
-              }}</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <!-- Choix du nombre de places -->
-      <div class="col-auto">
-        <div class="container d-flex align-items-center" id="div-places">
-          <label for="places">Choisissez le nombre de places :</label>
-          <input type="number" id="places" name="places" min="1" max="114" />
-        </div>
-      </div>
-    </div>
-  </div>
+  <ion-list [inset]="true" lines="none">
+    <!-- Choix du cinéma -->
+    <ion-item>
+      <ion-select
+        interface="popover"
+        [interfaceOptions]="customPopoverOptions"
+        aria-label="cinema"
+        placeholder="Choisissez un cinéma"
+        (ionChange)="selectCinema($event.detail.value)"
+      >
+        <ion-select-option *ngFor="let cinema of listCinemas" [value]="cinema">
+          {{ cinema.name }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!-- Choix du film -->
+    <ion-item>
+      <ion-select
+        aria-label="film"
+        placeholder="Choisissez un film"
+        (ionChange)="selectFilm($event.detail.value)"
+      >
+        <ion-select-option *ngFor="let film of listFilms" [value]="film">
+          {{ film.title }}
+        </ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <!-- Choix du nombre de places -->
+    <ion-item>
+      <p>Nombre de places :</p>
+      <ion-item>
+        <ion-button (click)="decrease()" color="custom-pink">-</ion-button>
+        <ion-input
+          class="places"
+          type="number"
+          min="1"
+          max="114"
+          placeholder="1"
+          readonly
+          [(ngModel)]="numberOfSeats"
+        ></ion-input>
+        <ion-button (click)="increase()" color="custom-pink">+</ion-button>
+      </ion-item>
+    </ion-item>
+  </ion-list>
 
   <!-- Affichage des séances du cinéma choisi -->
   <div *ngIf="selectedCinema">
@@ -65,4 +61,4 @@
     <h3>Séances disponibles pour {{ selectedFilm.title }}</h3>
     <app-card-sessions [items]="listSessions"></app-card-sessions>
   </div>
-</div>
+</ion-content>
